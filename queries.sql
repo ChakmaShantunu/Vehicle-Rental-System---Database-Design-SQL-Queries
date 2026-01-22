@@ -20,3 +20,16 @@ create table
             availability_status in ('available', 'rented', 'maintenance')
         )
     );
+
+create table
+    if not exists bookings (
+        booking_id serial primary key,
+        booking_user_id int not null references users (user_id),
+        booking_vehicle_id int not null references vehicles (vehicle_id),
+        start_date date not null,
+        end_date date not null,
+        booking_status varchar(20) not null check (
+            booking_status in ('pending', 'confirmed', 'completed', 'cancelled')
+        ),
+        total_cost decimal(10, 2) not null
+    );
