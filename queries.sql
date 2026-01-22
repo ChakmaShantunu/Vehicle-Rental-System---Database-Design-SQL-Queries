@@ -64,3 +64,46 @@ values
         'password123',
         '1122334455'
     );
+
+INSERT INTO
+    vehicles (
+        vehicle_name,
+        type,
+        model,
+        registration_number,
+        rental_price_per_day,
+        availability_status
+    )
+VALUES
+    (
+        'Toyota Corolla',
+        'car',
+        '2022',
+        'ABC-123',
+        50,
+        'available'
+    ),
+    (
+        'Honda Civic',
+        'car',
+        '2021',
+        'DEF-456',
+        60,
+        'rented'
+    ),
+    (
+        'Yamaha R15',
+        'bike',
+        '2023',
+        'GHI-789',
+        30,
+        'available'
+    ),
+    (
+        'Ford F-150',
+        'truck',
+        '2020',
+        'JKL-012',
+        100,
+        'maintenance'
+    );
