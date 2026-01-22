@@ -107,3 +107,46 @@ VALUES
         100,
         'maintenance'
     );
+
+insert into
+    bookings (
+        booking_user_id,
+        booking_vehicle_id,
+        start_date,
+        end_date,
+        booking_status,
+        total_cost
+    )
+values
+    (
+        1,
+        2,
+        '2023-10-01',
+        '2023-10-05',
+        'completed',
+        240.00
+    ),
+    (
+        1,
+        2,
+        '2023-11-01',
+        '2023-11-03',
+        'completed',
+        120.00
+    ),
+    (
+        3,
+        2,
+        '2023-12-01',
+        '2023-12-02',
+        'confirmed',
+        60.00
+    ),
+    (
+        1,
+        1,
+        '2023-12-10',
+        '2023-12-12',
+        'pending',
+        100.00
+    );
