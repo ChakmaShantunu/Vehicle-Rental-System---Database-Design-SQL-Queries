@@ -33,3 +33,34 @@ create table
         ),
         total_cost decimal(10, 2) not null
     );
+
+insert into
+    users (
+        user_role,
+        user_name,
+        email,
+        password,
+        phone_number
+    )
+values
+    (
+        'customer',
+        'Alice',
+        'alice@example.com',
+        'pass123',
+        '1234567890'
+    ),
+    (
+        'admin',
+        'Bob',
+        'bob@example.com',
+        'Pass123',
+        '0987654321'
+    ),
+    (
+        'customer',
+        'Charlie',
+        'charlie@example.com',
+        'password123',
+        '1122334455'
+    );
