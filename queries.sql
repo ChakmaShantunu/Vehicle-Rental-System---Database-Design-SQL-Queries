@@ -150,3 +150,16 @@ values
         'pending',
         100.00
     );
+
+select
+    b.booking_id,
+    u.user_name,
+    v.vehicle_name,
+    b.start_date,
+    b.end_date,
+    b.booking_status,
+    b.total_cost
+from
+    bookings b
+    inner join users u on b.booking_user_id = u.user_id
+    inner join vehicles v on b.booking_vehicle_id = v.vehicle_id;
