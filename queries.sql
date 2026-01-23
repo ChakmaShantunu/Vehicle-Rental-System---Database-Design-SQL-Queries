@@ -153,13 +153,28 @@ values
 
 select
     b.booking_id,
-    u.user_name,
+    u.user_name as customer_name,
     v.vehicle_name,
     b.start_date,
     b.end_date,
     b.booking_status,
     b.total_cost
 from
-    bookings b
-    inner join users u on b.booking_user_id = u.user_id
-    inner join vehicles v on b.booking_vehicle_id = v.vehicle_id;
+    bookings as b
+    inner join users as u on b.booking_user_id = u.user_id
+    inner join vehicles as v on b.booking_vehicle_id = v.vehicle_id;
+
+select
+    v.vehicle_id,
+    v.vehicle_name
+from
+    vehicles as v
+where
+    not exists (
+        select
+            1
+        from
+            bookings as b
+        where
+            b.booking_vehicle_id = v.vehicle_id
+    );
