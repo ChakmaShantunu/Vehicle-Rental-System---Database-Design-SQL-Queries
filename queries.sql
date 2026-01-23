@@ -178,3 +178,11 @@ where
         where
             b.booking_vehicle_id = v.vehicle_id
     );
+
+select
+    *
+from
+    vehicles
+where
+    type = 'car'
+    and availability_status = 'available';
