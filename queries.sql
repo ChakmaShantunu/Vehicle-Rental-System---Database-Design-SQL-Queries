@@ -186,3 +186,16 @@ from
 where
     type = 'car'
     and availability_status = 'available';
+
+select
+    v.vehicle_id,
+    v.vehicle_name,
+    count(b.booking_id) as total_bookings
+from
+    vehicles as v
+    inner join bookings as b on v.vehicle_id = b.booking_vehicle_id
+group by
+    v.vehicle_id,
+    v.vehicle_name
+having
+    count(b.booking_id) > 2;
